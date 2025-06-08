@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: monthly_movie_performance
+    description: "The final table showing monthly revenue, tickets sold, and rental costs for each movie at each location."
+    columns:
+      - name: movie_id
+        description: "The unique identifier for the movie."
+        tests:
+          - not_null
+      - name: movie_title
+        description: "The title of the movie."
+      - name: genre
+        description: "The genre of the movie. Nulls are replaced with 'Unknown'."
+      - name: studio
+        description: "The studio that produced the movie."
+      - name: month
+        description: "The first day of the month for which the data is aggregated."
+        tests:
+          - not_null
+      - name: location
+        description: "The theater location identifier (e.g., NJ_001)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['NJ_001', 'NJ_002', 'NJ_003']
+      - name: rental_cost
+        description: "The cost to rent the movie for that month at that location."
+      - name: tickets_sold
+        description: "The total number of tickets sold for the movie in that month/location."
+      - name: revenue
+        description: "The total revenue generated from ticket sales for the movie in that month/location."
+
+    tests:
+      # This ensures our primary key for this table is unique
+      - unique:
+          column_name: "concat(to_char(month, 'YYYY-MM'), '-', movie_id, '-', location)"
