@@ -7,6 +7,7 @@
 - [Project Structure](#project-structure)
 - [Key Models](#key-models)
 - [Data Quality And Testing](#data-quality-and-testing)
+- [Lineage Overview](#lineage-overview)
   
 
 ## 1. Project Overview
