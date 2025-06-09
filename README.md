@@ -51,3 +51,16 @@ Data integrity is enforced via a suite of tests defined in the `sources.yml` and
 *   **Custom Singular Test**:
     *   `assert_revenue_is_not_negative.sql`: This test ensures that no record in the final `monthly_movie_performance` table has a negative revenue value.
 
+
+## 5. lineage overview
+
+
+
+
+
+
+
+
+
+
+
