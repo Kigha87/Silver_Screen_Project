@@ -20,7 +20,7 @@ The project ingests raw data from multiple sources, each with a different struct
 
 *   **Data Warehouse:** Snowflake
 *   **Transformation Tool:** dbt (Data Build Tool)
-*   **Orchestration (Optional):** dbt Cloud
+
 
 ## 3. Project Structure
 
