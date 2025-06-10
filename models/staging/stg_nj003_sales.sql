@@ -4,9 +4,9 @@ with nj003_sales as (
 
 select
     date_trunc('month', timestamp::date) as month,
-    details as movie_id, -- 'details' column contains the movie_id for tickets
+    details as movie_id, 
     'NJ_003' as location,
-    sum(amount) as tickets_sold, -- 'amount' is the number of tickets
+    sum(amount) as tickets_sold, 
     sum(total_value) as revenue
 from
     nj003_sales

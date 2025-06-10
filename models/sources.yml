@@ -9,7 +9,6 @@ sources:
         description: "Catalogue of all movies with their details."
         columns:
           - name: movie_id
-            description: "The unique identifier for a movie."
             tests:
               - unique
               - not_null
@@ -38,16 +37,20 @@ sources:
           - name: transaction_id
             tests:
               - not_null
-
-      - name: rental_costs
-        description: "Monthly movie rental costs per location."
+      
+      - name: invoices
+        description: "Raw monthly invoice data for movie rental costs."
         columns:
+          - name: invoice_id
+            tests:
+              - unique
+              - not_null
           - name: movie_id
             tests:
               - not_null
-          - name: location_id
+          - name: month
             tests:
               - not_null
-          - name: month
+          - name: location_id
             tests:
               - not_null

@@ -8,7 +8,7 @@ movie_catalogue as (
 ),
 
 rental_costs as (
-    select * from {{ ref('stg_rental_costs') }}
+    select * from {{ ref('stg_invoices') }}
 )
 
 select
