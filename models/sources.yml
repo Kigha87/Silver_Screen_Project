@@ -1,0 +1,56 @@
+version: 2
+
+sources:
+  - name: Silver_Screen_Project
+    database: Silver_Screen
+    schema: public
+    tables:
+      - name: movie_catalogue
+        description: "Catalogue of all movies with their details."
+        columns:
+          - name: movie_id
+            tests:
+              - unique
+              - not_null
+
+      - name: nj_001
+        description: "Transactional sales data for location NJ_001."
+        columns:
+          - name: transaction_id
+            tests:
+              - unique
+              - not_null
+
+      - name: nj_002
+        description: "Daily aggregated sales data for location NJ_002."
+        columns:
+          - name: date
+            tests:
+              - not_null
+          - name: movie_id
+            tests:
+              - not_null
+
+      - name: nj_003
+        description: "Transactional sales data for location NJ_003, including non-ticket items."
+        columns:
+          - name: transaction_id
+            tests:
+              - not_null
+      
+      - name: invoices
+        description: "Raw monthly invoice data for movie rental costs."
+        columns:
+          - name: invoice_id
+            tests:
+              - unique
+              - not_null
+          - name: movie_id
+            tests:
+              - not_null
+          - name: month
+            tests:
+              - not_null
+          - name: location_id
+            tests:
+              - not_null
