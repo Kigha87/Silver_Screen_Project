@@ -7,6 +7,7 @@
 - [Project Structure](#project-structure)
 - [Key Models](#key-models)
 - [Data Quality And Testing](#data-quality-and-testing)
+- [How To Run The Project](#how-to-run-the-project)
 - [Lineage Overview](#lineage-overview)
   
 
@@ -51,8 +52,22 @@ Data integrity is enforced via a suite of tests defined in the `sources.yml` and
 *   **Custom Singular Test**:
     *   `assert_revenue_is_not_negative.sql`: This test ensures that no record in the final `monthly_movie_performance` table has a negative revenue value.
 
+## 5. How to run the project
 
-## 5. lineage overview
+### Prerequisites
+
+1.  dbt is installed and configured.
+2.  Your `profiles.yml` file is set up with valid credentials to connect to your Snowflake data warehouse.
+3.  The raw data CSVs have been loaded into the database and schema defined in your `models/sources.yml` file.
+
+### Running the Project
+
+To run all models and execute all tests, use the `build` command.
+
+```bash
+dbt build
+
+## 6. lineage overview
 
 
 
