@@ -2,6 +2,6 @@
 select
     *
 from
-    {{ ref('monthly_movie_performance') }}
+    {{ ref('marts_monthly_movie_performance') }}
 where
     revenue < 0

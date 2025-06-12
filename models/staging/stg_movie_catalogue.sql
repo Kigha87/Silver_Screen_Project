@@ -1,6 +1,9 @@
-with clean_movie as (
-    select * from {{ source('Silver_Screen_Project', 'movie_catalogue') }}
-)
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 
 select
     movie_id,
@@ -8,4 +11,4 @@ select
     coalesce(genre, 'Unknown') as genre,
     studio
 from
-    clean_movie
+    {{ source('Silver_Screen_Project', 'movie_catalogue') }}
