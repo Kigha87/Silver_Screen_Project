@@ -26,8 +26,8 @@ left join movie_catalogue as mc
 on us.movie_id = mc.movie_id
 left join movie_costs as i
 on us.movie_id = i.movie_id
-and us.month = i.month
-and us.location = i.location
+
+
 
 
 
