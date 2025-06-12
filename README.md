@@ -70,6 +70,7 @@ dbt build
 ## 6. lineage overview
 
 
+<img width="1651" alt="Screenshot 2025-06-12 at 14 31 12" src="https://github.com/user-attachments/assets/999d266e-f20a-4aeb-86f7-2f0d655f3dad" />
 
 
 
