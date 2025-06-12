@@ -28,7 +28,7 @@ The project ingests raw data from multiple sources, each with a different struct
 The project follows dbt best practices, organizing models into logical layers:
 
 *   **/models/staging**: This layer contains models that perform basic cleaning, casting, and renaming of the source data. Each source table has a corresponding staging model. The goal is to create a clean, standardized version of each raw source.
-*   **/models/intermediate**: This layer contains ephemeral models used for complex transformations or for joining/unioning staging models. The `int_movie_revenue.sql` model is a key example, as it combines the sales data from all three locations into a single stream.
+*   **/models/intermediate**: This layer contains ephemeral models used for complex transformations or for joining/unioning staging models. The `int_movies_revenue.sql` model is a key example, as it combines the sales data from all three locations into a single stream.
 *   **/models/marts**: This is the final layer, containing the business-facing tables that BI tools or analysts will consume. Our primary output, `marts_monthly_movie_performance`, lives here.
 
 ### Data Flow (DAG)
@@ -39,9 +39,9 @@ The project follows this general data flow:
 ## 4. Key Models
 
 *   `stg_nj001_sales`, `stg_nj002_sales`, `stg_nj003_sales`: These models clean and standardize the sales data from the three different location sources, bringing them to a common structure.
-*   `stg_movie_catalogue`: Cleans the movie metadata, replacing null `genre` values with 'Unknown'.
+*   `stg_movies_catalogue`: Cleans the movie metadata, replacing null `genre` values with 'Unknown'.
 *   `stg_invoices`: This model ingests raw invoice data, cleans column names, and aggregates records to a monthly grain to provide a single, accurate `rental_cost` per movie, per location, per month. It correctly handles duplicate invoice entries found in the source.
-*   `int_movie_revenue`: An ephemeral model that unions the three separate sales streams into one cohesive dataset.
+*   `int_movies_revenue`: An ephemeral model that unions the three separate sales streams into one cohesive dataset.
 *   `marts_monthly_movie_performance`: The final table. It joins sales data with the movie catalogue and invoice data to create a comprehensive monthly performance view. **Granularity: one row per movie, per location, per month.**
 
 ## 5. Data Quality and Testing
