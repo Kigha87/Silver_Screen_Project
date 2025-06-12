@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
+
 with nj001 as (
     select * from {{ ref('stg_nj001_sales') }}
 ),

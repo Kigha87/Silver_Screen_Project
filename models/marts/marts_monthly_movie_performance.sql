@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 with
 movies_revenue as (
 select * from {{ ref( 'int_movies_revenue') }}

@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
+
 with nj002_sales as (
     select * from {{ source('Silver_Screen_Project', 'nj_002') }}
 )
