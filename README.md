@@ -66,6 +66,9 @@ To run all models and execute all tests, use the `build` command.
 
 ```bash
 dbt build
+```
+
+
 
 ## 6. lineage overview
 
