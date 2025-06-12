@@ -64,10 +64,25 @@ Data integrity is enforced via a suite of tests defined in the `sources.yml` and
 
 To run all models and execute all tests, use the `build` command.
 
-```bash
+```
 dbt build
 ```
+Alternatively, run steps individually:
+Test your sources:
+```
+dbt test --select source:*
+```
 
+
+Run all models:
+```
+dbt run
+```
+
+Run all tests (generic and custom):
+```
+dbt test
+```
 
 
 ## 6. lineage overview
